@@ -196,8 +196,57 @@ app.factory('SomeFactory', [
 <br />
 
 
+###AngularJS .directives
+******
+
+**Why Use?**
+
+Let's say you have a template that is repeated many times in your code. When you change it in one place, you would have to change it in several others. This is a good opportunity to use a directive to simplify your template – making the app easy scalable and maintainable.
+
+<br />
+**Things to note:**
+
+- If you plan on using the same directive multiple times and you don't isolate the scope, you're going to do something called 'Polluting' the scope of the parent.
+
+<br />
+**Scope:** Three trypes of isolate scope
+
+- number: "@" | Used for reading an attribute
+
+```
+ <div number="555-1234"></div> (555-1234 being the attribute)
+ 
+```
+
+- network: "=" | Used for creating a bi-directional two way binding (updates done within the directive, also update within the controller scope)
+
+```
+ <div network="network"></div> (network being the selector bound to the controller)
+
+```
+
+- makeCall: "&" | Used to make a call on something in the controller scope
+
+```
+ <div make-call="leaveVoicemail(number, message)"></div> (example below)
+
+```
+
+**Declaration Styles:** Options for directive declaration usage
+
+```
+E = element | <my-menu title="Products"> Some Code </my-menu> 
+
+A = attribute | <div my-menu="Products"> Some Code </my-menu> 
+
+C = class | <div class="my-menu:Products"> Some Code </my-menu>
+
+M = comment | <!-- directive: my-menu Products -->  
 
 
+```
+
+<br /><br />
 ###Helpful Hints:
 ****
 <br />
