@@ -73,7 +73,7 @@ appName.controller('ModalController', ['$scope',
 **Creating a Factory Object**
 
 - More re-useable and easier to maintain
-- NameFactory is the factory object
+- ModalFactory is the factory object
 
 ```
 appName.factory('ModalFactory', [
