@@ -191,7 +191,6 @@ app.factory('SomeFactory', [
 - Second, it make each component more testable.
 
 
-
 ## AngularJS .directives
 
 **Why Use?**
