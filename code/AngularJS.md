@@ -1,8 +1,8 @@
-#AngularJS
+# AngularJS
 
 
-###AngularJS app.js
-*****
+## Basics
+
 **Setting up your main app file (app.js)**
 
 **Note:** Order matters! app.js needs to be included before any other non-vendor files.
@@ -30,7 +30,9 @@
 
 **Note:** The below structure supports minification
 
+
 ```
+
 var appName = angular.module('AppName',
     [
         'dependencyOne', //inject app dependency here (if needed)
@@ -41,15 +43,13 @@ var appName = angular.module('AppName',
 
 ```
 
-<br /><br />
-###AngularJS .controller
-****
+
+## AngularJS .controller
 
 **Creating the Controller**
 
 - Notice how we passed the variable $scope as a parameter to the controller function.
 - appName.controller - assigns ModalController to AppName
-
 
 
 ```
@@ -66,9 +66,8 @@ appName.controller('ModalController', ['$scope',
 ```
  
 
-<br /><br />
-###AngularJS .factory
-****
+## AngularJS .factory
+
 
 **Creating a Factory Object**
 
@@ -125,9 +124,9 @@ appName.controller('ModalController', ['$scope', 'ModalFactory',
 
 ```
 
-<br /><br />
-###Service Vs Factory
-****
+
+## Service Vs Factory
+
 
 ```
 app.service('SomeService', function);
@@ -141,7 +140,7 @@ Both are singleton objects (otherwise known as stateless objects) that contain u
 
 The main difference between the two is in the way we reference thier methods.
 
-####AngularJS .service
+### AngularJS .service
 
 Notice: how we create service methods using `this.methodname`.
 
@@ -161,7 +160,7 @@ app.service('SomeService', [
 
 ```
 
-####AngularJS .factory
+### AngularJS .factory
 
 Notice: how we created an object named `'factory'` and assigned our methods to it, then returned that object so it is accessible when passed as an injectable argument through the 'SomeFactory' object. 
 
@@ -193,22 +192,21 @@ app.factory('SomeFactory', [
 - First it fulfills the principle of separation of concern and/or segregation of duties. Each component is responsible for it's own work. 
 - Second, it make each component more testable.
 
-<br />
 
 
 ###AngularJS .directives
-******
 
 **Why Use?**
 
 Let's say you have a template that is repeated many times in your code. When you change it in one place, you would have to change it in several others. This is a good opportunity to use a directive to simplify your template – making the app easy scalable and maintainable.
 
-<br />
+
+
 **Things to note:**
 
 - If you plan on using the same directive multiple times and you don't isolate the scope, you're going to do something called 'Polluting' the scope of the parent.
 
-<br />
+
 **Scope:** Three trypes of isolate scope
 
 - number: "@" | Used for reading an attribute
@@ -246,16 +244,16 @@ M = comment | <!-- directive: my-menu Products -->
 
 ```
 
-<br /><br />
-###Helpful Hints:
-****
-<br />
-#####Notes on Dependencies:
+
+## Helpful Hints:
+
+
+##### Notes on Dependencies:
 
 - Make sure all css and js files are included in the index.html file during development. If you're getting error's in your network tab, I've found that to be a good starting point.
 	
 
-#####Notes on Custom Directives: 
+##### Notes on Custom Directives: 
 
 
 Naming conventions matter!
