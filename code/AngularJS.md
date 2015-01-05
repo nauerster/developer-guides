@@ -191,7 +191,7 @@ app.factory('SomeFactory', [
 - Second, it make each component more testable.
 
 
-
+<br /></br />
 ## AngularJS .directives
 
 **Why Use?**
@@ -242,6 +242,33 @@ M = comment | <!-- directive: my-menu Products -->
 
 ```
 
+**Definition Options:**
+
+Using a basic pseudo-code template good for creating any directive...
+
+```
+
+var appName = angular.module('AppName', [...]);
+
+appName.directive('appNameDirectiveName',
+    function() {
+        return {
+            restrict: 'E',                              # See above Declaration Styles
+            scope: {},                                  # Create a new scope for the directive rather than inheriting the parent scope
+            replace: true,                              # If true, replace the current element. If false or unspecified, append this directive to the current element
+            transclude: true,                           # Lets you move the original children of a directive to a location inside the new template
+            templateUrl: 'path/to/template.html',       # Specify tfhe template to be loaded by URL
+            link: function(scope, element, attrs) {     # Programmatically modify resulting DOM element instances, add event listeners, and set up data binding
+                scope.showStuff = false;
+                scope.toggleStuff = function toggle() {
+                    scope.showStuff = !scope.showStuff;
+                }              
+            }
+        }
+    }
+);
+
+```
 
 ## Helpful Hints:
 
