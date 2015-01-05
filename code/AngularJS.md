@@ -1,9 +1,7 @@
 # AngularJS
 
 
-## Basics
-
-**Setting up your main app file (app.js)**
+## Setting up your main app file (app.js)
 
 **Note:** Order matters! app.js needs to be included before any other non-vendor files.
 
@@ -194,7 +192,7 @@ app.factory('SomeFactory', [
 
 
 
-###AngularJS .directives
+## AngularJS .directives
 
 **Why Use?**
 
