@@ -299,3 +299,67 @@ or
 
 custom-directive="attr-name"
 ```
+
+**Directives - Templating Issues
+
+If you encounter the following...
+
+```
+Error: error:tplrt Invalid Template Root
+Template for directive '{0}' must have exactly one root element. {1}
+
+```
+
+And your directive is declaring a template (or templateUrl) and replace mode is on (replace: true), then your directives template probably looks something like this...
+
+```
+<div class="container">
+    <!-- some code -->
+</div>
+<div class="container">
+    <!-- some code -->
+</div>
+
+```
+
+Angulars replacement operation results in a single element (the directive) being replaced. The replacment of multiple elements or nodes is unsupported (in v1.3) and not commonly needed in practice.
+
+To correct this, you have to options.
+
+1. Move all sibling elements into one parent element.
+
+```
+<div class="container-wrap">
+    <div class="container">
+        <!-- some code -->
+    </div>
+    <div class="container">
+        <!-- some code -->
+    </div>
+</div>
+```
+
+2. Change the rescrict option to and attribute instead of an element.
+
+**JS:
+```
+appName.directive('custom',
+    function() {
+        return {
+            restrict: 'A'                     
+        }
+    }
+);
+
+```
+**HTML: (partial template)
+
+```
+<div class="container-wrap" custom>
+    <!-- Directive template pulled in here -->
+</div>
+
+```
+
+
+
