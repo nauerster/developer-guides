@@ -341,7 +341,7 @@ To correct this, you have to options.
 
 2. Change the rescrict option to and attribute instead of an element.
 
-**JS:
+**JS:**
 ```
 appName.directive('custom',
     function() {
@@ -352,7 +352,7 @@ appName.directive('custom',
 );
 
 ```
-**HTML: (partial template)
+**HTML:** (partial template)
 
 ```
 <div class="container-wrap" custom>
