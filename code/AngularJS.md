@@ -324,9 +324,9 @@ And your directive is declaring a template (or templateUrl) and replace mode is 
 
 Angulars replacement operation results in a single element (the directive) being replaced. The replacment of multiple elements or nodes is unsupported (in v1.3) and not commonly needed in practice.
 
-To correct this, you have to options.
+To correct this, you have two options.
 
-1. Move all sibling elements into one parent element.
+* Move all sibling elements into one parent element.
 
 ```
 <div class="container-wrap">
@@ -339,7 +339,7 @@ To correct this, you have to options.
 </div>
 ```
 
-2. Change the rescrict option to and attribute instead of an element.
+* Change the rescrict option to and attribute instead of an element.
 
 **JS:**
 ```
