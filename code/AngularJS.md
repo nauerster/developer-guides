@@ -198,7 +198,25 @@ app.factory('SomeFactory', [
 
 Let's say you have a template that is repeated many times in your code. When you change it in one place, you would have to change it in several others. This is a good opportunity to use a directive to simplify your template – making the app easy scalable and maintainable.
 
+**When to use directives?**
 
+- If you have a reusable HTML component
+```
+<ui-widget>
+```
+
+- If you want reusable HTML behavior
+```
+<div ng-click="...">
+```
+
+- If you want to wrap a jQuery plugin
+```
+<div ui-date></div>
+```
+
+- Almost anytime you need to interface with the DOM
+    - Typically it's back practice to interact with the DOM anywhere else (i.e. Controllers, Services, ect). The reason being, it makes your code less testable and more coupled to the DOM  
 
 **Things to note:**
 
