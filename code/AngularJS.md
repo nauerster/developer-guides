@@ -24,15 +24,19 @@
 
 ```
 
-**Assign 'AppName' to a variable to be used accross the application.**
+## AngularJS .module
 
-**Note:** The below structure supports minification
+**Decalaring the Module**
 
+There are two ways to declare your modules. The first is to assign your module to a global variable (i.e. a namespace object) and hang all your controllers, services, factories, and directives off of that... Or, the second option – which is the `recommended` option, is to declare your modules without variables using the setter syntax. 
+
+`Note:` Although common, you run the risk of potential naming collisions down the line.
 
 ```
+/* avoid */
 
-var appName = angular.module('AppName',
-    [
+var appName = angular.module('AppName', 
+	[
         'dependencyOne', //inject app dependency here (if needed)
         'dependencyTwo'
     ]
@@ -41,6 +45,28 @@ var appName = angular.module('AppName',
 
 ```
 
+```
+/* recommended */
+
+angular
+	.module('app', [
+		'dependencyOne',
+        'dependencyTwo'
+	]);
+
+```
+
+**Setting vs Getting**
+
+- Only set once and get for all other instances.
+
+	_Why?: "A module should only be created once, then retrieved from that point and after."_
+
+```
+- Use: 		`angular.module('app', [...]);` 	to set a module
+- Use: 		`angular.module('app');` 			to get a module 
+
+```
 
 ## AngularJS .controller
 
@@ -191,7 +217,7 @@ app.factory('SomeFactory', [
 - Second, it make each component more testable.
 
 
-<br /></br />
+
 ## AngularJS .directives
 
 **Why Use?**
@@ -201,18 +227,22 @@ Let's say you have a template that is repeated many times in your code. When you
 **When to use directives?**
 
 - If you have a reusable HTML component
+
 ```
-<ui-widget>
+	<ui-widget>
+
 ```
 
 - If you want reusable HTML behavior
+
 ```
-<div ng-click="...">
+	<div ng-click="...">
 ```
 
 - If you want to wrap a jQuery plugin
+
 ```
-<div ui-date></div>
+	<div ui-date></div>
 ```
 
 - Almost anytime you need to interface with the DOM
@@ -318,7 +348,7 @@ or
 custom-directive="attr-name"
 ```
 
-**Directives - Templating Issues
+**Directives - Templating Issues**
 
 If you encounter the following...
 
@@ -360,6 +390,7 @@ To correct this, you have two options.
 * Change the rescrict option to and attribute instead of an element.
 
 **JS:**
+
 ```
 appName.directive('custom',
     function() {
