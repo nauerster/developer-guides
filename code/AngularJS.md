@@ -1,5 +1,6 @@
 # AngularJS
 
+**Disclaimer:** This is an evolving project. Over time, I will introduce as well as phase out techniques. If an example says `/* avoid */`, it is out of practice and not recommended.     
 
 ## Setting up your main app file (app.js)
 
@@ -28,9 +29,9 @@
 
 **Decalaring the Module**
 
-There are two ways to declare your modules. The first is to assign your module to a global variable (i.e. a namespace object) and hang all your controllers, services, factories, and directives off of that... Or, the second option – which is the `recommended` option, is to declare your modules without variables using the setter syntax. 
+There are two ways to declare your modules. The first is to assign your module to a global variable (i.e. a namespaced object) and hang all your controllers, services, factories, and directives off of that... Or, the second option – which is the `recommended` option, is to declare your modules without variables using the setter syntax. 
 
-`Note:` Although common, you run the risk of potential naming collisions down the line.
+`Note:` The first example, runs the risk of potential naming collisions down the line.
 
 ```
 /* avoid */
@@ -41,8 +42,6 @@ var appName = angular.module('AppName',
         'dependencyTwo'
     ]
 );
-
-
 ```
 
 ```
@@ -53,7 +52,6 @@ angular
 		'dependencyOne',
         'dependencyTwo'
 	]);
-
 ```
 
 **Setting vs Getting**
