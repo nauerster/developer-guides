@@ -19,26 +19,22 @@ We could write the following...
 a[href$=".png"],
 a[href$=".jpg"],
 a[href$=".gif"] {...}
-
 ```
 Wait, we can do better than that! Let's write our own data attribute.
 
 ```
 <a href="path/to/image.png" data-filetype="image">Image Link</a>
-
 ```
 Now, with that hook in place, we can target every (or, only) those that have the above data attributes.
 
 ```
 a[data-filetype="image"] {...}
-
 ```
 
 In the same way, we could create a data attribute, which can receive a space-separated list of anything we want.
 
 ```
 <a href="path/to/image.jpg" data-info="external image">View Image</a>
-
 ```
 With the above in place, we could write...
 
@@ -50,5 +46,4 @@ a[data-info~="external"] {
 a[data-info~="image"] {
 	border: 1px solid black;
 }
-
 ```
