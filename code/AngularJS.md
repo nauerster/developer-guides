@@ -2,7 +2,19 @@
 
 **Disclaimer:** This is an evolving project. Over time, I will introduce as well as phase out techniques. If an example says `/* avoid */`, it is out of practice and not recommended.     
 
-## Setting up your main app file (app.js)
+## Table of Contents
+
+1. [Getting Started](#getting-started)
+2. [Modules](#modules)
+3. [Controllers](#controllers)
+4. [Factories](#factories)
+4. [Services vs Factories](#services-vs-factories)
+5. [Directives](#directives)
+4. [Asides](#asides)
+
+## Getting Started
+
+**Setting up your main app file (app.js)**
 
 **Note:** Order matters! app.js needs to be included before any other non-vendor files.
 
@@ -25,7 +37,7 @@
 
 ```
 
-## AngularJS .module
+## Modules
 
 **Decalaring the Module**
 
@@ -66,7 +78,7 @@ angular
 
 ```
 
-## AngularJS .controller
+## Controllers
 
 **Creating the Controller**
 
@@ -87,9 +99,8 @@ appName.controller('ModalController', ['$scope',
 
 ```
  
-
-## AngularJS .factory
-
+ 
+## Factories
 
 **Creating a Factory Object**
 
@@ -160,9 +171,10 @@ app.factory('SomeFactory', function);
 
 Both are singleton objects (otherwise known as stateless objects) that contain useful functions that carry out specific task. Services are responsible for holding the business logic. Keeping that logic outside of your controller is important. A controller is only responsible for binding modal data to views using $scope. It should not contain logic to fetch data or manipulate it.
 
-The main difference between the two is in the way we reference thier methods.
+The main difference between the two is in the way we reference their methods.
 
-### AngularJS .service
+
+### Service
 
 Notice: how we create service methods using `this.methodname`.
 
@@ -182,7 +194,7 @@ app.service('SomeService', [
 
 ```
 
-### AngularJS .factory
+### Factory
 
 Notice: how we created an object named `'factory'` and assigned our methods to it, then returned that object so it is accessible when passed as an injectable argument through the 'SomeFactory' object. 
 
@@ -216,11 +228,31 @@ app.factory('SomeFactory', [
 
 
 
-## AngularJS .directives
+## Directives
+
+**What are Directives?**
+
+At a high level, directives are markers on a DOM element (such as an attribute, element name, comment or CSS class) that tell AngularJS's HTML compiler ($compile) to attach a specified behavior to that DOM element or even transform the DOM element and its children.
 
 **Why Use?**
 
 Let's say you have a template that is repeated many times in your code. When you change it in one place, you would have to change it in several others. This is a good opportunity to use a directive to simplify your template – making the app easy scalable and maintainable.
+
+**Normalization**
+
+The following are all valid ways of declaring your directive.
+
+```
+ng-bind
+ng:bind
+ng_bind
+x-ng-bind
+data-ng-bind
+
+```
+
+The latter (i.e., data-ng-bind) is recommended for writing valid HTML5. Some HTML5 validators will throw an error if not prefixed with `'data-'`, like data-hg-app.
+
 
 **When to use directives?**
 
@@ -316,8 +348,7 @@ appName.directive('appNameDirectiveName',
 
 ```
 
-## Helpful Hints:
-
+## Asides:
 
 ##### Notes on Dependencies:
 
@@ -359,12 +390,14 @@ Template for directive '{0}' must have exactly one root element. {1}
 And your directive is declaring a template (or templateUrl) and replace mode is on (replace: true), then your directives template probably looks something like this...
 
 ```
+
 <div class="container">
-    <!-- some code -->
+   	<!-- some code -->
 </div>
 <div class="container">
-    <!-- some code -->
+   	<!-- some code -->
 </div>
+
 
 ```
 
@@ -385,7 +418,7 @@ To correct this, you have two options.
 </div>
 ```
 
-* Change the rescrict option to and attribute instead of an element.
+* Change the restrict option to and attribute instead of an element.
 
 **JS:**
 
@@ -407,6 +440,8 @@ appName.directive('custom',
 </div>
 
 ```
+
+
 
 
 
