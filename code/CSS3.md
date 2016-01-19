@@ -1,4 +1,4 @@
-# CSS<sup>3</sup>
+# CSS
 
 ## Advanced Attribute Selectors
 
