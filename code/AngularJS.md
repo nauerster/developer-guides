@@ -1,3 +1,5 @@
+[![forthebadge](http://forthebadge.com/images/badges/uses-js.svg)](http://forthebadge.com)
+
 # AngularJS
 
 **Disclaimer:** This is an evolving project. Over time, I will introduce as well as phase out techniques. If an example says `/* avoid */`, it is out of practice and not recommended.     
