@@ -7,7 +7,7 @@ Creating the ideal development environment on you Mac.
 
 ## Table of Contents
 
-1  [Getting Started](#getting-started)
+1. [Getting Started](#getting-started)
 2. [Apps](#apps)
 3. [Tools](#tools)
 
