@@ -1,4 +1,4 @@
-[![forthebadge](http://forthebadge.com/images/badges/built-by-developers.svg)](http://forthebadge.com)
+[![forthebadge](http://forthebadge.com/images/badges/built-by-developers.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/just-plain-nasty.svg)](http://forthebadge.com)
 
 
 #Developer Guilde
@@ -7,8 +7,9 @@ _Disclaimer: This is an evolving project_
 
 Can't remember a certain syntax, or maybe a method used to accomplish a current objective? Maybe this collection of snippets and definitions will help aid you along the way.
 
-####[HTML5](https://github.com/nauerster/developer-guides/blob/master/code/HTML.md)
-some overview text here...
+####[Development Environment](https://github.com/nauerster/developer-guides/blob/master/code/environments.md)
+Creating the ideal development environment on you Mac.
+
 
 ####[HTML5](https://github.com/nauerster/developer-guides/blob/master/code/HTML.md)
 some overview text here...
