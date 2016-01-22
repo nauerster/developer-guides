@@ -1,4 +1,4 @@
-[![forthebadge](http://forthebadge.com/images/badges/uses-css.svg)](http://forthebadge.com)
+
 
 # Development Environment
 
