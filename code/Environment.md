@@ -8,9 +8,9 @@ Creating the ideal development environment on you Mac.
 ## Table of Contents
 
 1. [Getting Started](#getting-started)
-2. [Apps](#apps)
-3. [Software](#software)
-
+2. [Productivity](#productivity)
+3. [Development Tools](#development-tools)
+4. [Tools & Packages](#tools-packages)
 
 
 ## Getting Started
@@ -19,33 +19,54 @@ Show and Hide Hidden Files on your Mac
 - [Ian Lunn](http://ianlunn.co.uk/articles/quickly-showhide-hidden-files-mac-os-x-mavericks/) wrote a great article on this. 
 
 
-## Apps
+## Productivity
 
-##### Productivity
+- Evernote
+  * Site: [Evernote](https://itunes.apple.com/app/evernote/id281796108?mt=8)
 
-- [Alfred 2](https://www.alfredapp.com/)
-- [Spectacle](https://www.spectacleapp.com/)
-- [Screenhero](https://screenhero.com/)
-- [Slack](https://slack.com/)
+- Alfred
+  * Site: [Alfred 2](https://www.alfredapp.com/)
 
-##### Editors
+- Spectacle
+  * Site: [Spectacle](https://www.spectacleapp.com/)
 
-- [Sublime Text](http://www.sublimetext.com/3)
-- [Mou](http://25.io/mou/)
+- Screenhero
+  * Site: [Screenhero](https://screenhero.com/)
 
-##### Others
-
-- [Yummy FTP](http://www.yummysoftware.com/)
-- [Codekit](http://incident57.com/codekit/)
-- [iTerm2](https://www.iterm2.com/)
-- [DiffMerge](https://sourcegear.com/diffmerge/)
+- Slack
+  * Site: [Slack](https://slack.com/)
 
 
+## Development Tools
 
-## Software
+- Sublime
+  * Site: [Sublime Text](http://www.sublimetext.com/3)
+
+- Mou
+  * Site: [Mou](http://25.io/mou/)
+
+- Yummy FTP
+  * Site: [Yummy FTP](http://www.yummysoftware.com/)
+
+- Codekit
+  * Site: [Codekit](http://incident57.com/codekit/)
+
+- iTerm2
+  * Site: [iTerm2](https://www.iterm2.com/)
+
+- oh-my-zsh
+  * Site: [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+  * Resource Links:
+    * [My ZSH + Sublime Text](http://gilesbutler.co.uk/oh-my-zsh-sublime-text-2-command-line/)
+
+- DiffMerge
+  * Site: [DiffMerge](https://sourcegear.com/diffmerge/)
+
+
+
+## Tools & Packages
 
 **Best if installed in the following order.**
-
 
 - Xcode
   * Site: [Xcode](https://developer.apple.com/xcode/)
@@ -59,7 +80,7 @@ Show and Hide Hidden Files on your Mac
 
 - Git
   * Site: [Git](http://git-scm.com/)
-  * Install: $ brew install git
+  * Install: brew install git
   * Location: /usr/bin/git
 
 - Node & NPM
@@ -79,9 +100,13 @@ Show and Hide Hidden Files on your Mac
   * Install: npm install -g bower
   * Location: /usr/local/bin/grunt
 
+- RVM
+  * Site: [RVM](https://rvm.io/)
+  * Install: [https://rvm.io/rvm/install#installation](https://rvm.io/rvm/install#installation)
+
 - Ruby _Comes pre-installed on Mac’s_
   * Site: [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
-  * Install: brew install ruby
+  * Install: Use Ruby Version Manager (RVM) to install the latest version of Ruby
   * Loation: /usr/bin/ruby
 
 - Sass
