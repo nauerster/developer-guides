@@ -44,7 +44,7 @@ Show and Hide Hidden Files on your Mac
 
 ## Software
 
-*Best if installed in the following order.*
+**Best if installed in the following order.**
 
 
 - Xcode
@@ -79,7 +79,7 @@ Show and Hide Hidden Files on your Mac
   * Install: npm install -g bower
   * Location: /usr/local/bin/grunt
 
-- Ruby **Comes pre-installed on Mac’s**
+- Ruby _Comes pre-installed on Mac’s_
   * Site: [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
   * Install: brew install ruby
   * Loation: /usr/bin/ruby
