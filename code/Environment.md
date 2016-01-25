@@ -9,7 +9,7 @@ Creating the ideal development environment on you Mac.
 
 1. [Getting Started](#getting-started)
 2. [Apps](#apps)
-3. [Tools](#tools)
+3. [Software](#software)
 
 
 
