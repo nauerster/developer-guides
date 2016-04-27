@@ -6,16 +6,72 @@
 
 ## Table of Contents
 
+1. [Definitions](#definitions)
+1. [Basic Concepts](#concepts)
 1. [Scope](#scope)
-2. [Arrays](#arrays)
-3. [Functions](#functions)
-4. [Closers](#closers)
-5. [Callbacks](#callbacks)
-6. [Objects](#objects)
-7. [Loops](#loops)
-8. [Conditional Statements](#statements)
-9. [JSON](#json)
+1. [Arrays](#arrays)
+1. [Functions](#functions)
+1. [Closers](#closers)
+1. [Callbacks](#callbacks)
+1. [Objects](#objects)
+1. [Loops](#loops)
+1. [Conditional Statements](#statements)
+1. [JSON](#json)
+1. [Credits](#credits)
 
+
+## Definitions
+
+
+- **Syntax Parser:** A program that reads your code and what it does and if it's grammar is valid.
+- **Lexical Environment:** Where something sits in the code you write. Where is it written and what surrounds it, is important.
+- **Execution Context:** A wrapper to help manage the code that is running.
+
+
+## Basic Concepts
+
+- **Name/Value Pairs:** A name which maps to a unique value.
+
+	Example:
+
+	```javascript
+	
+	{
+		Person: 'John Doe'
+	}
+
+	// In this example, 'Person' is the name and 'John Doe' is the value.
+
+	```
+
+	```javascript
+
+	Person : {
+    Name : 'John Doe',
+    Age: 45,
+    Address: {
+          Street: '4321 Watt Way',
+          City: 'San Diego',
+          State: 'CA',
+          Zip: 89765
+     }
+	}
+
+	// In this example, 'Person' becomes a collect of other name/value pairs
+
+ 	```
+
+	 - The name may be defined more than once, but only can have one value in any given context.
+	 - Furthermore, that value may have more name/value pairs (as shown in the second example).
+	 - When talking about Objects in JavaScript, we are talking about a collection of name/value pairs 
+
+See [Objects](#objects) for a more in depth look. 
+
+- **The Global Environment and the Global Object:**
+	-- Whenever code is run in JavaScript, it's run inside an Execution Context (i.e., an execution wrapper).
+	-- By default, JavaScript automatically create two things for you:
+		1. The Global Object
+		2. The 'this' variable
 
 
 ## Scope
@@ -32,28 +88,33 @@
 		var name = "john"; // local to doStuff
 
 	}
-	
-```
+
+	```
 
 
 
 ## Arrays 
 
+	-- **How to create an Array using String Values:**
 
-```javascript
-// Create an Array using String Values:
+	```javascript
 
-var names = ["jim", "john", "joe"];
-```
+	var names = ["jim", "john", "joe"];
 
-```
-// Adding a new value to the Array:
+	```
 
-var names = ["jim", "john", "joe"];
+	-- ** How to adding a new value to an Array:
 
-names.push("sam");
+	```javascript
 
-//console.log(names); = names = ["jim", "john", "joe", "sam"];
+	var names = ["jim", "john", "joe"];
+
+	names.push("sam");
+
+	// see what is returned you the browser console
+	console.log(names); = names = ["jim", "john", "joe", "sam"];
+	
+	```
 
 
 // Create an Array using numbers:
