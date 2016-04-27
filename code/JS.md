@@ -95,7 +95,7 @@ See [Objects](#objects) for a more in depth look.
 
 ## Arrays 
 
-	-- **How to create an Array using String Values:**
+	- **How to create an Array using String Values:**
 
 	```javascript
 
@@ -103,7 +103,7 @@ See [Objects](#objects) for a more in depth look.
 
 	```
 
-	-- ** How to adding a new value to an Array:
+	- ** How to adding a new value to an Array:
 
 	```javascript
 
@@ -113,7 +113,7 @@ See [Objects](#objects) for a more in depth look.
 
 	// see what is returned you the browser console
 	console.log(names); = names = ["jim", "john", "joe", "sam"];
-	
+
 	```
 
 
