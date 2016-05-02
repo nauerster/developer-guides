@@ -117,116 +117,141 @@ See [Objects](#objects) for a more in depth look.
 	```
 
 
-// Create an Array using numbers:
+- **Creating an Array using numbers:**
 
-var values = [10, 20, 30, 40, 50];
+	```javascript
 
-// How to Reverse the values in an Array
-var reversedValues = values.reverse();
+	var values = [10, 20, 30, 40, 50];
 
-// Output: 50,40,30,20,10
+	// How to Reverse the values in an Array
+	var reversedValues = values.reverse();
 
+	// Output: 50,40,30,20,10
 
-
-/* --------------------------------------------- */
-// [3] Functions
-/* --------------------------------------------- */
-
-// Types: Declarative vs Expressive
-// url: http://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/
-
-// Declarative:
-
-function foo() {
-    return 3;
-}
-
-foo(); // return 3 
+	```
 
 
-// Expressive:
-
-// anonymous function expression
-var a = function() {
-    return 3;
-}
-
-// OR
-
-(function() {
-    alert('Hello');
-}) ();
+## Functions
 
 
-// named function expression
-var a = function bar() {
-    return 3;
-}
+#### Types: Declarative vs Expressive:
 
-// self envoking function expression
-(function sayHello() {
-    alert('Hello');
-}) ();
+- Resource Link: [Declarations vs Function Expressions](http://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/)
 
+- **Declarative:**
 
+	```javascript
 
-// Functions In Action
-/* --------------------------------------------- */
+	function foo() {
+	    return 3;
+	}
 
-// Basic Function
+	foo(); // return 3 
 
-function sayHello() {
-    alert('Hello');
-}
+	```
 
-sayHello(); // Calls the function
+- **Expressive:**
 
+	```javascript
 
+	// anonymous function expression
+	var a = function() {
+	    return 3;
+	}
 
-// Creating a Function that takes Arguments
+	// OR
 
-function showDistance(speed, time) {
-    alert(speed + time);
-}
-
-showDistance(10, 5); // Calls the Function and the Values we pass to it – returning the value 15
+	(function() {
+	    alert('Hello');
+	}) ();
 
 
+	// named function expression
+	var a = function bar() {
+	    return 3;
+	}
 
-// Creating a Function that Returns Data
+	// self envoking function expression
+	(function sayHello() {
+	    alert('Hello');
+	}) ();
 
-function showDistance(speed, time) {
-    alert(speed + time);
-}
+	```
 
-var myDistance = showDistance(10, 5); // Store the results of the calculation showDistance does
-
-myDistance(); // Calls the results of showDistance = 15
-
-
-
-// Create a Function Literal - Note: A function literal is a function without an assigned name
-var add = function(a, b) {
-    return a + b;
-}
-
-add(10, 5); // Calls the Function and the Values we pass to it – returning the value 15
+#### Functions In Action
 
 
-// Create Constructor Function
+- **Basic Function:**
 
-function Cars(make, model, year) {
+	```javascript
 
-    this.make = make;
-    this.model = model;
-    this.year = year;
-}
+	function sayHello() {
+	    alert('Hello');
+	}
 
-var car1 = new Cars("Toyota", "Tacoma", "2014"); // new instances of the object Cars
-var car2 = new Cars();
+	sayHello(); // Calls the function
+
+	```
+
+- **Creating a Function that takes Arguments:**
+
+	```javascript
+
+	function showDistance(speed, time) {
+	    alert(speed + time);
+	}
+
+	showDistance(10, 5); // Calls the Function and the Values we pass to it – returning the value 15
+
+	```
+
+- **Creating a Function that Returns Data:**
+
+	```javascript
+
+	function showDistance(speed, time) {
+	    alert(speed + time);
+	}
+
+	var myDistance = showDistance(10, 5); // Store the results of the calculation showDistance does
+
+	myDistance(); // Calls the results of showDistance = 15
+
+	```
 
 
-// How to add a custom method to the Cars object
+- **Create a Function Literal:** 
+-- _Note: A function literal is a function without an assigned name.__
+
+	```javascript
+
+	var add = function(a, b) {
+	    return a + b;
+	}
+
+	add(10, 5); // Calls the Function and the Values we pass to it – returning the value 15
+
+	```
+
+- **Create Constructor Function:**
+
+	```javascript
+
+	function Cars(make, model, year) {
+
+	    this.make = make;
+	    this.model = model;
+	    this.year = year;
+	}
+
+	var car1 = new Cars("Toyota", "Tacoma", "2014"); // new instances of the object Cars
+	var car2 = new Cars();
+
+	```
+
+- **How to add a custom method to the Cars object:**
+
+```javascript
 
 Cars.prototype.price = function() {
 
@@ -237,38 +262,39 @@ Cars.prototype.price = function() {
 console.log(car1);
 // ^output: Cars {make: Toyota, model: Tacoma, year: 2014, price: function}
 
+```
 
 
-// Another use of a Constructor Function and Prototype 
+- **Another use of a Constructor Function and Prototype:**
+
+	```javascript
+
+	function Person(name) {
+	    this.name = name;
+	}
+	// When called as a constructor, the above will create a named property 
+	// of an instance called name and assign it the value of the name parameter.
+
+	Person.prototype.greet = function(otherName) {
+	    return "Hi" + otherName + ", my name is" + this.name;
+	}
+	// Here the identifier name is used as a variable, but the identifier you are 
+	// looking for is a named property of the instance, so you need to access it 
+	// as such. Typically, this function will be called as a method of the instance 
+	// so this within the function will be a reference to the instance.
 
 
-function Person(name) {
-    this.name = name;
-}
-// When called as a constructor, the above will create a named property 
-// of an instance called name and assign it the value of the name parameter.
+	var john = new Person("John");
+	// Here we create a new instance of Person
+	// Assign it to a new object called 'jonh'
+	// And passed in a new string property (i.e., "John")
+	//
+	// Note: Variables starting with a capital letter are, by convention, reserved for construtors)
 
+	// and then
+	john.greet("Fred"); // Returns: Hi Fred, my name is John.
 
-Person.prototype.greet = function(otherName) {
-    return "Hi" + otherName + ", my name is" + this.name;
-}
-// Here the identifier name is used as a variable, but the identifier you are 
-// looking for is a named property of the instance, so you need to access it 
-// as such. Typically, this function will be called as a method of the instance 
-// so this within the function will be a reference to the instance.
-
-
-var john = new Person("John");
-// Here we create a new instance of Person
-// Assign it to a new object called 'jonh'
-// And passed in a new string property (i.e., "John")
-//
-// Note: Variables starting with a capital letter are, by convention, reserved for construtors)
-
-// and then
-john.greet("Fred"); // Returns: Hi Fred, my name is John.
-
-
+	```
 
 
 
