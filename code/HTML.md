@@ -106,6 +106,8 @@ You should only give elements an ID attribute if they are unique. They should be
 ###Naming Conventions
 When assigning a class or id to a selector, name it based off the nature of what it is, rather than by what it looks like.
 
+See [CSS Styleguide](https://github.com/nauerster/styleguides/blob/master/code/CSS.md) for a more in depth look into proper naming conventions.
+
 **Meaningful**...
 
 `<p class="note-text"></p>`
@@ -125,57 +127,113 @@ Indentation will be done with "soft tabs" using spaces, the tab equivalent shoul
 During the development phase &ndash; whitespace and comments are encouraged, where appropraite. We will use Grunt Task Runner to remove any comments or whitespace, as well as minify and compress our files to be production ready.
 
 
+
 ##HTML5-Boilerplate
 
-```
-<!DOCTYPE html>
-<head>
+```html
+
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js gt-ie9"> <!--<![endif]-->
+  <head>
+
+    <!--
+
+      Description: ...
+      Stack: Javascript, Sass, CSS3, HTML5
+      Version: 0.0.1
+      Author: Your Name
+
+    //-->
+
     <meta charset="utf-8">
-    <title>A Descriptive Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- #DNS prefetching -->
+    <!-- http://csswizardry.com/2013/01/front-end-performance-for-web-designers-and-front-end-developers -->
+    <link rel="dns-prefetch" href="//ajax.googleapis.com">
+    <link rel="dns-prefetch" href="//use.typekit.net">
+    <link rel="dns-prefetch" href="//google-analytics.com">
+
+    <!-- #Asset Prefetching -->
+    <!-- Fetch and Download Assets before requested by the user  -->
+    <!-- http://csswizardry.com/2013/01/front-end-performance-for-web-designers-and-front-end-developers/#section:resource-prefetching -->
+    <link rel="prefetch" href="">
+
+    <!-- #Page Prefetching -->
+    <!-- http://calendar.perfplanet.com/2012/speed-up-your-site-using-prefetching -->
+    <link rel="prefetch" href="index.html">
+
+    <title>Project Title</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, user-scalable=1, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- MS Tap Highlight for Windows Phones -->
+    <!-- The tag is specific to Internet Explorer 10 on Windows Phone, and does not apply to Internet Explorer 10 on Windows. -->
+    <!-- http://stackoverflow.com/questions/7508100/webkit-tap-highlight-color-in-windows-phone -->
+    <meta name="msapplication-tap-highlight" content="no">
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="stylesheet" type="text/css" href="css/vendor.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.min.css" />
-</head>
-<body>
+
+    <!-- build:css css/vendor.css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/animate.css/animate.min.css" />
+    <!-- endbuild -->
+
+    <!-- build:css({.tmp,app}) css/style.css -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- endbuild -->
+
+  </head>
+  <body>
+
     <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    
-    <header>
-        <a id="logo" href="/">Site Title</a>
-        <div id="slogan">Application Slogan</div>
-        
-        <nav>
-            <!-- use nav tag if applicable -->
-        </nav>
-    </header>
-    
+    <!-- Add your site or application content here -->
+
+
     <section class="container">
         
         <article class="row">
-        <div class="col-xs-12">
-            <h3></h3>
-            <p></p>
-        </div>
+
+          <div class="wrapper">
+
+            <h3>Heading</h3>
+            <p>Content</p>
+
+          </div>
+          
         </article>
         
     </section>
-    
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-    <script>
-    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-    e.src='//www.google-analytics.com/analytics.js';
-    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-    ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
-    <script src="js/vendor.min.js"></script>
-    <script src="js/app-angular.min.js"></script>
-    <script src="js/app.min.js"></script>
-</body>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- build:js js/vendor.js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) js/app.js -->
+    <script src="js/app.js"></script>
+    <!-- Directives -->
+    <!-- End Directives -->
+    <!-- Models -->
+    <!-- End Models -->
+    <!-- endbuild -->
+
+  </body>
 </html>
 
 ```
