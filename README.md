@@ -19,10 +19,13 @@ All the cool stuff, you may or may not already know...
 ####[SASS - Scalable Patterns](https://github.com/nauerster/developer-guides/blob/master/code/SSP.md)
 some overview text here...
 
-####[AngularJS](https://github.com/nauerster/developer-guides/blob/master/code/AngularJS.md)
-some overview text here...
+####[Angular 1](https://github.com/nauerster/developer-guides/blob/master/code/AngularJS.md)
+A recap of things learned, including scaleable design patterns, syntax, conventions, and structuring applications.
+
+####[Angular 2](https://github.com/nauerster/developer-guides/blob/master/code/Angular2.md)
+To inifinity and beyond. Exploring new concepts, tools, syntax, what's new and different, design patterns, and much more.
 
 ####[JS](https://github.com/nauerster/developer-guides/blob/master/code/JS.md)
-some overview text here...
+A quick refresher highlighing common definitions, basic concepts, syntax, best practices and patterns.
 
 

@@ -54,7 +54,7 @@ The following are general guidelines for structuring your HTML markup. Authors a
 
 **Example:**
 
-```
+```html
  <table>
  	<thead>
 		<tr>
@@ -95,7 +95,7 @@ You should only give elements an ID attribute if they are unique. They should be
 
 **Example:**
 
-```
+```html
  <ul id="categories">
 	<li class="item">Category 1</li>
 	<li class="item">Category 2</li>

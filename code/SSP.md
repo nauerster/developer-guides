@@ -4,51 +4,53 @@
 ## Blocks
 Core components used to define the layout of your app.
 
-```
+```css
 
-// common block styles
-
-.header
-.content
-.sidebar
-.footer
-
+/**
+ * common block styles
+ *
+ * .header
+ * .content
+ * .sidebar
+ * .footer
+ *
+ **/
 
 // block modifiers
 
 .header
 	{...}
-	&-global
+	&--global
 		{...}
-	&-content
+	&--content
 		{...}
-	&-module
+	&--module
 		{...}
 
 
 .content
 	{...}
-	&-main
+	&--main
 		{...}
-	&-module
+	&--module
 		{...}
 
 
 .sidebar
 	{...}
-	&-left
+	&--left
 		{...}
-	&-right
+	&--right
 		{...}
 
 
 .footer
 	{...}
-	&-global
+	&--global
 		{...}
-	&-content
+	&--content
 		{...}
-	&-module
+	&--module
 		{...}
 
 
@@ -57,15 +59,15 @@ Core components used to define the layout of your app.
 ## Elements
 Minor componets, e.g. search, buttons, navs
 
-```
+```css
 
 .header
 	{...}
-	&-global
+	&--global
 		{...}
 
 
-.header-global
+.header--global
 	.user-login
 
 ```
