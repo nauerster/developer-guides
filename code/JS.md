@@ -300,69 +300,76 @@ console.log(car1);
 
 
 
-// [4] Closers
-/* --------------------------------------------- */
-// A closure is a set of local variables inside a function – kept alive after the function has returned.
+## Closers
 
-// Basic closer
+A closure is a set of local variables inside a function – kept alive after the function has returned.
 
-function showName() {
+- **Basic Closer:**
 
-    var name = "joe";
+	```javascript
 
-    return name; // makes var name accessable in the global space 
+	function showName() {
 
-}
+		var name = "joe";
 
-var showNames = showName(); // this creates a variable in the global space which keeps the local variable (name) alive for further use.
+	  	return name; // makes var name accessable in the global space 
 
+	}
 
-// console.log(showName); will return the word "Hello"
-
-
-// Basic Closer - Using Arguments
-
-function getDistance(speed, time) { // passes the arguments
-
-    var distance = speed * time; // stores the arguments values
-
-    return distance; // make the values accessable in the global space
-
-}
-
-var myDistance = getDistance(10, 5);
-// When the getDistance function gets called, 
-// it gets evaluated and returns a numerical value that 
-// then becomes assigned to the myDistance variable.
-
-console.log(myDistance);
+	var showNames = showName(); // this creates a variable in the global space which keeps the local variable (name) alive for further use.
 
 
-// Quick Aside:
-// 'this' represent the scope of context for the closer you're actually in
+	// console.log(showName); will return the word "Hello"
 
-function Avengers() {
+```
 
-    this.avengers = [];
+- **Basic Closer - Using Arguments:**
 
-}
+	```javascript
 
-// OR
+	function getDistance(speed, time) { // passes the arguments
 
-function Avengers() {
+	    var distance = speed * time; // stores the arguments values
 
-    var vm = this;
+	    return distance; // make the values accessable in the global space
 
-    vm.avengers = [];
+	}
 
-}
+	var myDistance = getDistance(10, 5);
+	// When the getDistance function gets called, 
+	// it gets evaluated and returns a numerical value that 
+	// then becomes assigned to the myDistance variable.
+
+	console.log(myDistance);
 
 
-// [5] Callbacks
-/* --------------------------------------------- */
+	// Quick Aside:
+	// 'this' represent the scope of context for the closer you're actually in
+
+	function Avengers() {
+
+		this.avengers = [];
+
+	}
+
+	// OR
+
+	function Avengers() {
+
+	    var vm = this;
+
+	    vm.avengers = [];
+
+	}
+
+```
+
+## Callbacks
 
 
-// Simple jQuery example
+- **Simple jQuery example:**
+
+```javascript
 
 $("button").click(function(){
   $("p").hide("slow",function(){
@@ -370,68 +377,74 @@ $("button").click(function(){
   });
 });
 
+```
 
-// How to pass an Anonymous function to a Method as a parameter
+- **How to pass an Anonymous function to a Method as a parameter
 
-var names = ['Mike', 'John', 'Bill']; //stores an array of names in a variable
+	```javascript
 
-names.forEach(
-    function(eachName, index) {
-        alert(index + 1 + '.' + eachName);
-    }
-);  //1st: assigns the names varaible to the forEach method
-    //2nd: we pass our anonymous function to the forEach method as a parameter
-    //3rd: we pass in two parameters to our anonymous function (eachName = the array of name strings, index = our counter which is iterating through our array of names and incrementing our integer (1) value) 
-    //lastly, our results are output in an alert modole.
+	var names = ['Mike', 'John', 'Bill']; //stores an array of names in a variable
+
+	names.forEach(
+	    function(eachName, index) {
+	        alert(index + 1 + '.' + eachName);
+	    }
+	);  //1st: assigns the names varaible to the forEach method
+	    //2nd: we pass our anonymous function to the forEach method as a parameter
+	    //3rd: we pass in two parameters to our anonymous function (eachName = the array of name strings, index = our counter which is iterating through our array of names and incrementing our integer (1) value) 
+	    //lastly, our results are output in an alert modole.
+
+	```
+
+- **Create a class call setSelected:**
+
+```javascript
+
+	function setSelected() {
+
+	    //When a tab is clicked we need to remove the class 'selected', from the previously active tab and assign it to the new tab being clicked
+
+	    $('.tab').on('click', function() {// this is an anonymous function
+
+	            var active = $('.tab.selected');
+
+	            validateSelected(this, active);
+
+	            //In the above we are passing 2 arguments through the function 'validateSelected'
+
+	            //this = the element being clicked (tab) - this is being passed in the below function as (elem)
+	            //active = the active element (i.e. The one with class 'selected' applied to it)
+	    });
+	}
+
+	function validateSelected(elem, active) {
+
+	    //elem = tab being clicked
+	    //active = tab last selected
+
+	    var this = $(elem), //here we assign elem to a variable named this
+	        that = this.closest('.tab-wrapper').find(active);
+	    //that grabs the active element, then bubbles up the DOM tree and 
+	    //grabs the closest parent element with the assigned class name (tab-wrapper)
+
+	    that.removeClass('selected'); //when tab is clicked, we remove the class 'selected' from the previously clicked tab
+	    this.addClass('selected'); //and assign the newly clicked tab with the class 'selected' 
+
+	}
+
+	setSelected(); //call the function
+
+	// [Note]: 
+	// validateSelected doesn't execute until initSelected is triggered and finished
+	// A callback function is executed after the current effect is finished.
+
+	```
 
 
-// create a class call setSelected
-
-function setSelected() {
-
-    //When a tab is clicked we need to remove the class 'selected', from the previously active tab and assign it to the new tab being clicked
-
-    $('.tab').on('click', function() {// this is an anonymous function
-
-            var active = $('.tab.selected');
-
-            validateSelected(this, active);
-
-            //In the above we are passing 2 arguments through the function 'validateSelected'
-
-            //this = the element being clicked (tab) - this is being passed in the below function as (elem)
-            //active = the active element (i.e. The one with class 'selected' applied to it)
-    });
-}
-
-function validateSelected(elem, active) {
-
-    //elem = tab being clicked
-    //active = tab last selected
-
-    var this = $(elem), //here we assign elem to a variable named this
-        that = this.closest('.tab-wrapper').find(active);
-    //that grabs the active element, then bubbles up the DOM tree and 
-    //grabs the closest parent element with the assigned class name (tab-wrapper)
-
-    that.removeClass('selected'); //when tab is clicked, we remove the class 'selected' from the previously clicked tab
-    this.addClass('selected'); //and assign the newly clicked tab with the class 'selected' 
-
-}
-
-setSelected(); //call the function
-
-// [Note]: 
-// validateSelected doesn't execute until initSelected is triggered and finished
-// A callback function is executed after the current effect is finished.
+## Objects
 
 
-
-
-// [6] Objects
-/* --------------------------------------------- */
-
-// [Note]:
+[Note]:
 // All data (variables), with properties and methods. 
 // Almost everything in javascript can be an object... Functions, Variable, Strings, Arrays
 
