@@ -138,8 +138,8 @@ See [Objects](#objects) for a more in depth look.
 
 - Additional Articles by: 
 
-	-- [Angus Croll](http://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/)
-	-- [John Papa](http://www.johnpapa.net/angular-function-declarations-function-expressions-and-readable-code/)
+	-	[Angus Croll](http://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/)
+	- [John Papa](http://www.johnpapa.net/angular-function-declarations-function-expressions-and-readable-code/)
 
 - **Declarative:**
 
