@@ -17,6 +17,7 @@
 1. [Loops](#loops)
 1. [Conditional Statements](#statements)
 1. [JSON](#json)
+1. [Misc](#misc)
 1. [Credits](#credits)
 
 
@@ -145,6 +146,7 @@ See [Objects](#objects) for a more in depth look.
 
 	```javascript
 
+	// function statement
 	function foo() {
 	    return 3;
 	}
@@ -381,7 +383,7 @@ A closure is a set of local variables inside a function – kept alive after the
 
 	```
 
-- **How to pass an Anonymous function to a Method as a parameter
+- **How to pass an Anonymous function to a Method as a parameter**
 
 	```javascript
 
@@ -466,9 +468,10 @@ A closure is a set of local variables inside a function – kept alive after the
 
 	```
 
-- **Create a global namespaced object and assign it a method**
+- **Create a global namespaced object and assign it a method:**
 
 	```javascript
+
 	var Person = {
 
 	    SetMessage: function() {
@@ -487,51 +490,62 @@ A closure is a set of local variables inside a function – kept alive after the
 
 	```
 
-// You can also create a re-usable object know as a 'class function' in javascript:
+- **You can also create a re-usable object know as a 'class function' in JavaScript:**
 
-function Message() {
+	```javascript
 
-    this.hello = function() {
+	function Message() {
 
-        alert("Hello World");
+	    this.hello = function() {
 
-    }
+	        alert("Hello World");
 
-}
+	    }
 
-var message1 = new Message(); //message1 becomes a new instance of the object Message
+	}
 
-message1.hello();
+	var message1 = new Message(); //message1 becomes a new instance of the object Message
 
+	message1.hello();
 
-// Assingn a new property to an Object:
+	```
 
-var Person = {
+- **How to assign a new property to an Object:**
 
-    //property
-    firstName: "john";
+	```javascript
 
-};
+	// Object literal
+	var Person = {
 
+	    //property
+	    firstName: "john";
 
-// Or
+	};
 
-var Person = {};
+	// Or
 
-Person.firstName = "joe";
+	var Person = {};
 
-var nameVal = Person.firstName;
+	Person.firstName = "joe";
 
-alert(nameVal);
+	var nameVal = Person.firstName;
 
+	alert(nameVal);
 
-// You can also assign a method to a property of the object
+	```
+
+- **You can also assign a method to a property of an Object:**
+
+```javascript
 
 var Person = {
 
     //properties
-    firstName: "John", lastName: "Doe", age: 30,
+    firstName: "John", 
+    lastName: "Doe", 
+    age: 30,
 
+		// the method
     personsInfo: function(){
         return this.firstName + " " + this.lastName + " is " + this.age + ".";
     }
@@ -541,13 +555,14 @@ var setPersonsInfo = Person.personsInfo();
 
 console.log(setPersonsInfo); // should return: John Doe is 30
 
+```
 
 
-// Object Literals
-/* --------------------------------------------- */
-// An object literal is a comma-separated list of name-value pairs wrapped in curly 
-// braces. Object literals encapsulate data, enclosing it in a tidy package. This minimizes 
-// the use of global variables which can cause problems when combining code.
+#### Object Literals
+ - An object literal is a comma-separated list of name-value pairs wrapped in curly braces. 
+ - Object literals encapsulate data, enclosing it in a tidy package. This minimizes the use of global variables which can cause problems when combining code.
+
+```javascript
 
 var MyObject = {
     string:  'string value',
@@ -555,171 +570,204 @@ var MyObject = {
     bool:    true 
 }
 
+```
 
 
+## Loops
 
-// [7] Loops
-/* --------------------------------------------- */
+- **While loop:**
 
+	```javascript
 
-// While loop
+	// set up the index
+	var i = 1;
+	// create the counter or check the condition
+	while (i < 10) {
+	    i++; // increment the index
+	}
 
-// set up the index
-var i = 1;
-// create the counter or check the condition
-while (i < 10) {
-    i++; // increment the index
-}
+	```
 
+- **For loop:**
 
-// For loop
+	```javascript
 
-// set index, check condition, increment index
-for (var i = 1; i < 10; i++) {
-    // do stuff
-}
+	// set index, check condition, increment index
+	for (var i = 1; i < 10; i++) {
+	    // do stuff
+	}
 
+	```
 
-// For loop using a break
+- **For loop using a break:**
 
-for (var i = 1; i < 10; i++) {
+	```javascript
 
-    // do stuff
+	for (var i = 1; i < 10; i++) {
 
-    if (i == 101) {
-        break;
-        // break jumps out of the loop once the condition is met
-    }
-}
+	    // do stuff
 
-// For loop using a continue
+	    if (i == 101) {
+	        break;
+	        // break jumps out of the loop once the condition is met
+	    }
+	}
 
-for (var i = 1; i < 10; i++) {
-    // do stuff
-    if (i % 5 == 0) {
-        continue; // done with this iteration, not the entire loop, just this time around
-    }
-    // do second set of stuff
-}
+	```
 
+- **For loop using a continue:**
 
-// [8] If Statements
-/* --------------------------------------------- */
+	```javascript
 
-// Create a Basic Condition
+	for (var i = 1; i < 10; i++) {
+	    // do stuff
+	    if (i % 5 == 0) {
+	        continue; // done with this iteration, not the entire loop, just this time around
+	    }
+	    // do second set of stuff
+	}
 
-var a = 1,
-    b = 100;
+	```
 
-if(a < b) {
-    alert("a is less than b");
-}
+## Conditional Statements
 
 
-// Create Multiple Conditions
+- **How to create a basic condition:**
 
-var time = new Date().getHours();
+	```javascript
 
-var morning = 10,
-    afternoon = 20;
+	var a = 1,
+	    b = 100;
 
-    if(time < morning) {
-        //if condition 1 is true
-        alert("Good Morning");
-    } 
-    else if (time < afternoon) {
-        //if condition 2 is true
-        alert("Good Afternoon");
-    } 
-    else {
-        //if both condition are false
-        alert("Good Night");
-    }
+	if(a < b) {
+	    alert("a is less than b");
+	}
 
+	```
 
-// Ternary Condition
 
-var now = new Date();
-var greeting = "Good" + ((now.getHours() > 17) ? " evening." : " day.");
+- ** How to create multiple conditions:**
 
-    //greeting = the test
-    //evening = expression1 - wich is returned is the test is true
-    //day = expression2 - wich is returned is the test is false
+	```javascript
 
-console.log(greeting);
+	var time = new Date().getHours();
 
+	var morning = 10,
+	    afternoon = 20;
 
-// [9] JSON
-/* --------------------------------------------- */
+	    if(time < morning) {
+	        //if condition 1 is true
+	        alert("Good Morning");
+	    } 
+	    else if (time < afternoon) {
+	        //if condition 2 is true
+	        alert("Good Afternoon");
+	    } 
+	    else {
+	        //if both condition are false
+	        alert("Good Night");
+	    }
 
-// Create JSON Object Key - Value Pairs
+	```
 
-var people = {
+- ** How to write a 'Ternary' condition:**
 
-    person: [
+	```javascript
 
-        {
-            "user": "eric",
-            "age": 30
-        }, {
-            "user": "levi",
-            "age": 31
-        }
+	var now = new Date();
+	var greeting = "Good" + ((now.getHours() > 17) ? " evening." : " day.");
 
-    ]
+	    //greeting = the test
+	    //evening = expression1 - wich is returned is the test is true
+	    //day = expression2 - wich is returned is the test is false
 
-}
+	console.log(greeting);
 
-// How to parse the JSON object
+	```
 
-    function createList() {
 
-        var data = people.person;
+## JSON
 
-        $.each(data, function(key, item) {
+- **Create JSON Object Key - Value Pairs
 
-            var user = item.user,
-                age = item.age,
-                html = [];
+	```javascript
 
-            html.push('<p> + user + </p>');
-            html.push('<p> + age + </p>');
+	var people = {
 
+	    person: [
 
-            var build = html.join();
+	        {
+	            "user": "eric",
+	            "age": 30
+	        }, {
+	            "user": "levi",
+	            "age": 31
+	        }
 
-        });
-    }
+	    ]
 
-creatList(); // call function
+	}
 
-console.log(createList);
+```
 
+- **How to parse the JSON object:**
 
+	```javascript
 
+	function createList() {
 
+	    var data = people.person;
 
-// How to create a string
+	    data.forEach(function (key, item) {
 
-var str = "a b c";
+	        var user = item.user,
+	            age = item.age,
+	            html = [];
 
+	        html.push('<p> + user + </p>');
+	        html.push('<p> + age + </p>');
 
-// How to reverse the above string
 
-var str = "a b c", //create the string
-    len = str.length, //store it's length
-    reverse = ""; // assign an empty string
+	        var build = html.join();
 
-for (var i = len; i >= 0; i--) {
+	    });
+	}
 
-    reverse += str[i]; // assign the results to reverse
+	creatList(); // call function
 
-}
+	console.log(createList);
 
-var newStr = reverse; // store reverse as a new variable
+```
 
-console.log(newStr); // console the results
+## Misc
 
+- **How to create a string:**
+
+	```javascript
+
+	var str = "a b c";
+
+	```
+
+- **How to reverse the above string:**
+
+	```javascript
+
+	var str = "a b c", //create the string
+	    len = str.length, //store it's length
+	    reverse = ""; // assign an empty string
+
+	for (var i = len; i >= 0; i--) {
+
+	    reverse += str[i]; // assign the results to reverse
+
+	}
+
+	var newStr = reverse; // store reverse as a new variable
+
+	console.log(newStr); // console the results
+
+	```
 
 ## Credits:
 
