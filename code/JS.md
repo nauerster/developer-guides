@@ -646,7 +646,7 @@ var MyObject = {
 	```
 
 
-- ** How to create multiple conditions:**
+- **How to create multiple conditions:**
 
 	```javascript
 
@@ -670,7 +670,7 @@ var MyObject = {
 
 	```
 
-- ** How to write a 'Ternary' condition:**
+- **How to write a 'Ternary' condition:**
 
 	```javascript
 
