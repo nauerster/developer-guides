@@ -223,8 +223,9 @@ See [Objects](#objects) for a more in depth look.
 	```
 
 
-- **Create a Function Literal:** 
--- _Note: A function literal is a function without an assigned name.__
+- **Create a Function Literal:**
+
+	- _Note: A function literal is a function without an assigned name._
 
 	```javascript
 
@@ -254,18 +255,18 @@ See [Objects](#objects) for a more in depth look.
 
 - **How to add a custom method to the Cars object:**
 
-```javascript
+	```javascript
 
-Cars.prototype.price = function() {
+	Cars.prototype.price = function() {
 
-    alert("$25,000.00");
+	    alert("$25,000.00");
 
-} // All instances of the object Cars will inherit this method
+	} // All instances of the object Cars will inherit this method
 
-console.log(car1);
-// ^output: Cars {make: Toyota, model: Tacoma, year: 2014, price: function}
+	console.log(car1);
+	// ^output: Cars {make: Toyota, model: Tacoma, year: 2014, price: function}
 
-```
+	```
 
 
 - **Another use of a Constructor Function and Prototype:**
@@ -322,7 +323,7 @@ A closure is a set of local variables inside a function – kept alive after the
 
 	// console.log(showName); will return the word "Hello"
 
-```
+	```
 
 - **Basic Closer - Using Arguments:**
 
@@ -363,22 +364,22 @@ A closure is a set of local variables inside a function – kept alive after the
 
 	}
 
-```
+	```
 
 ## Callbacks
 
 
 - **Simple jQuery example:**
 
-```javascript
+	```javascript
 
-$("button").click(function(){
-  $("p").hide("slow",function(){
-    alert("The paragraph is now hidden"); // waits until the hide function has successfully ran
-  });
-});
+	$("button").click(function(){
+	  $("p").hide("slow",function(){
+	    alert("The paragraph is now hidden"); // waits until the hide function has successfully ran
+	  });
+	});
 
-```
+	```
 
 - **How to pass an Anonymous function to a Method as a parameter
 
@@ -399,7 +400,7 @@ $("button").click(function(){
 
 - **Create a class call setSelected:**
 
-```javascript
+	```javascript
 
 	function setSelected() {
 
@@ -444,46 +445,47 @@ $("button").click(function(){
 
 ## Objects
 
-
-[Note]:
-// All data (variables), with properties and methods. 
-// Almost everything in javascript can be an object... Functions, Variable, Strings, Arrays
-
-
-// Create an Object:
-
-var Person = {};
+- **Aside:**
+	- All data (variables), with properties and methods. 
+	- Almost everything in javascript can be an object... Functions, Variable, Strings, Arrays
 
 
+- **Create an Object:**
 
-// Assign a method to that object
+	```javascript
 
-Person.SayHello = function() {
+	var Person = {};
 
-    alert("Hello");
+	// Assign a method to that object
 
-}
+	Person.SayHello = function() {
 
+	    alert("Hello");
 
-// Create a global namespaced object and assign it a method
+	}
 
-var Person = {
+	```
 
-    SetMessage: function() {
+- **Create a global namespaced object and assign it a method**
 
-        alert("Hello");
+	```javascript
+	var Person = {
 
-    }
+	    SetMessage: function() {
 
-};
+	        alert("Hello");
 
-// to call SayHello and run the alert
+	    }
 
-var getMessage = Person.SetMessage();
+	};
 
-getMessage();
+	// to call SayHello and run the alert
 
+	var getMessage = Person.SetMessage();
 
+	getMessage();
+
+	```
 
 // You can also create a re-usable object know as a 'class function' in javascript:
 
