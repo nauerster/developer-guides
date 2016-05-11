@@ -688,7 +688,7 @@ var MyObject = {
 
 ## JSON
 
-- **Create JSON Object Key - Value Pairs
+- **Create JSON Object Key - Value Pairs:**
 
 	```javascript
 
