@@ -708,7 +708,7 @@ var MyObject = {
 
 	}
 
-```
+	```
 
 - **How to parse the JSON object:**
 
