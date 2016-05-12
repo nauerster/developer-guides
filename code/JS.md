@@ -406,33 +406,37 @@ A closure is a set of local variables inside a function – kept alive after the
 
 	function setSelected() {
 
-	    //When a tab is clicked we need to remove the class 'selected', from the previously active tab and assign it to the new tab being clicked
+		// When a tab is clicked we need to remove the class 'selected', from the previously active tab and assign it to the new tab being clicked
 
-	    $('.tab').on('click', function() {// this is an anonymous function
+		var tab = document.querySelector('.tab');
 
-	            var active = $('.tab.selected');
+		tab.addEventListener('click', function() { // this is an anonymous function
 
-	            validateSelected(this, active);
+			var active = document.querySelectorAll('.tab.is-selected');
 
-	            //In the above we are passing 2 arguments through the function 'validateSelected'
+	  	validateSelected(this, active);
 
-	            //this = the element being clicked (tab) - this is being passed in the below function as (elem)
-	            //active = the active element (i.e. The one with class 'selected' applied to it)
-	    });
+	  	//In the above we are passing 2 arguments through the function 'validateSelected'
+
+	  	//this = the element being clicked (tab) - this is being passed in the below function as (elem)
+	  	//active = the active element (i.e. The one with class 'is-selected' applied to it)
+
+	  )};
 	}
 
 	function validateSelected(elem, active) {
 
-	    //elem = tab being clicked
-	    //active = tab last selected
+	  // elem = tab being clicked
+	  // active = tab last selected
 
-	    var this = $(elem), //here we assign elem to a variable named this
-	        that = this.closest('.tab-wrapper').find(active);
-	    //that grabs the active element, then bubbles up the DOM tree and 
-	    //grabs the closest parent element with the assigned class name (tab-wrapper)
+	  var this = elem, //here we assign elem to a variable named this
+	      that = this.closest('.tab-wrapper').find(active);
+	      
+	  //that grabs the active element, then bubbles up the DOM tree and 
+	  //grabs the closest parent element with the assigned class name (tab-wrapper)
 
-	    that.removeClass('selected'); //when tab is clicked, we remove the class 'selected' from the previously clicked tab
-	    this.addClass('selected'); //and assign the newly clicked tab with the class 'selected' 
+	  that.removeClass('selected'); //when tab is clicked, we remove the class 'selected' from the previously clicked tab
+	  this.addClass('selected'); //and assign the newly clicked tab with the class 'selected' 
 
 	}
 
@@ -448,6 +452,7 @@ A closure is a set of local variables inside a function – kept alive after the
 ## Objects
 
 - **Aside:**
+
 	- All data (variables), with properties and methods. 
 	- Almost everything in javascript can be an object... Functions, Variable, Strings, Arrays
 
@@ -462,7 +467,7 @@ A closure is a set of local variables inside a function – kept alive after the
 
 	Person.SayHello = function() {
 
-	    alert("Hello");
+	  alert("Hello");
 
 	}
 
@@ -474,11 +479,11 @@ A closure is a set of local variables inside a function – kept alive after the
 
 	var Person = {
 
-	    SetMessage: function() {
+	  SetMessage: function() {
 
-	        alert("Hello");
+	    alert("Hello");
 
-	    }
+	  }
 
 	};
 
@@ -496,11 +501,11 @@ A closure is a set of local variables inside a function – kept alive after the
 
 	function Message() {
 
-	    this.hello = function() {
+	  this.hello = function() {
 
-	        alert("Hello World");
+	  	alert("Hello World");
 
-	    }
+	  }
 
 	}
 
@@ -517,8 +522,8 @@ A closure is a set of local variables inside a function – kept alive after the
 	// Object literal
 	var Person = {
 
-	    //property
-	    firstName: "john";
+	  //property
+	  firstName: "john";
 
 	};
 
@@ -540,15 +545,15 @@ A closure is a set of local variables inside a function – kept alive after the
 
 var Person = {
 
-    //properties
-    firstName: "John", 
-    lastName: "Doe", 
-    age: 30,
+  //properties
+  firstName: "John", 
+  lastName: "Doe", 
+  age: 30,
 
-		// the method
-    personsInfo: function(){
-        return this.firstName + " " + this.lastName + " is " + this.age + ".";
-    }
+	// the method
+  personsInfo: function(){
+    eturn this.firstName + " " + this.lastName + " is " + this.age + ".";
+  }
 };
 
 var setPersonsInfo = Person.personsInfo();
@@ -559,15 +564,16 @@ console.log(setPersonsInfo); // should return: John Doe is 30
 
 
 #### Object Literals
+
  - An object literal is a comma-separated list of name-value pairs wrapped in curly braces. 
  - Object literals encapsulate data, enclosing it in a tidy package. This minimizes the use of global variables which can cause problems when combining code.
 
 ```javascript
 
 var MyObject = {
-    string:  'string value',
-    number:  40,
-    bool:    true 
+  string: 'string value',
+  number: 40,
+  bool: true 
 }
 
 ```
@@ -581,9 +587,10 @@ var MyObject = {
 
 	// set up the index
 	var i = 1;
+
 	// create the counter or check the condition
 	while (i < 10) {
-	    i++; // increment the index
+		i++; // increment the index
 	}
 
 	```
@@ -594,8 +601,25 @@ var MyObject = {
 
 	// set index, check condition, increment index
 	for (var i = 1; i < 10; i++) {
-	    // do stuff
+	  // do stuff
 	}
+
+	```
+
+- **Quick Aside:**
+	- All three expressions in the head of the for loop are optional.
+
+	```javascript
+
+	// For example, in the initialization block it is not required to initialize variables
+
+	var i = 0;
+
+	for (; i < 9; i++) {
+		console.log(i);
+	}
+
+	// Remember to include a semi-colon in-place of any omited expressions (shown above)
 
 	```
 
@@ -608,8 +632,8 @@ var MyObject = {
 	    // do stuff
 
 	    if (i == 101) {
-	        break;
-	        // break jumps out of the loop once the condition is met
+	    	break;
+	    	// break jumps out of the loop once the condition is met
 	    }
 	}
 
@@ -620,11 +644,11 @@ var MyObject = {
 	```javascript
 
 	for (var i = 1; i < 10; i++) {
-	    // do stuff
-	    if (i % 5 == 0) {
-	        continue; // done with this iteration, not the entire loop, just this time around
-	    }
-	    // do second set of stuff
+	  // do stuff
+	  if (i % 5 == 0) {
+	  	continue; // done with this iteration, not the entire loop, just this time around
+	  }
+	  // do second set of stuff
 	}
 
 	```
@@ -637,10 +661,10 @@ var MyObject = {
 	```javascript
 
 	var a = 1,
-	    b = 100;
+	  b = 100;
 
 	if(a < b) {
-	    alert("a is less than b");
+	  alert("a is less than b");
 	}
 
 	```
@@ -653,20 +677,20 @@ var MyObject = {
 	var time = new Date().getHours();
 
 	var morning = 10,
-	    afternoon = 20;
+    afternoon = 20;
 
-	    if(time < morning) {
-	        //if condition 1 is true
-	        alert("Good Morning");
-	    } 
-	    else if (time < afternoon) {
-	        //if condition 2 is true
-	        alert("Good Afternoon");
-	    } 
-	    else {
-	        //if both condition are false
-	        alert("Good Night");
-	    }
+    if(time < morning) {
+	    // if condition 1 is true
+	    alert("Good Morning");
+    } 
+    else if (time < afternoon) {
+      // if condition 2 is true
+      alert("Good Afternoon");
+    } 
+    else {
+      // if both condition are false
+      alert("Good Night");
+    }
 
 	```
 
@@ -677,9 +701,9 @@ var MyObject = {
 	var now = new Date();
 	var greeting = "Good" + ((now.getHours() > 17) ? " evening." : " day.");
 
-	    //greeting = the test
-	    //evening = expression1 - wich is returned is the test is true
-	    //day = expression2 - wich is returned is the test is false
+	// greeting = the test
+	// evening = expression1 - wich is returned is the test is true
+	// day = expression2 - wich is returned is the test is false
 
 	console.log(greeting);
 
