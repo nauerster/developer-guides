@@ -404,7 +404,7 @@ A closure is a set of local variables inside a function – kept alive after the
 
 	```javascript
 
-	function setSelected() {
+	function SetSelected() {
 
 		// When a tab is clicked we need to remove the class 'selected', from the previously active tab and assign it to the new tab being clicked
 
@@ -495,7 +495,9 @@ A closure is a set of local variables inside a function – kept alive after the
 
 	```
 
-- **You can also create a re-usable object know as a 'class function' in JavaScript:**
+- **You can also create a re-usable object know as a 'First Class Function' in JavaScript:**
+
+> First Class Functions: Everything you can do with other types you can do with functions. You can assign them to variables, pass them around, create them on the fly.
 
 	```javascript
 
