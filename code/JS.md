@@ -496,8 +496,8 @@ A closure is a set of local variables inside a function – kept alive after the
 	```
 
 - **You can also create a re-usable object know as a 'First Class Function' in JavaScript:**
+	- _First Class Functions: Everything you can do with other types you can do with functions. You can assign them to variables, pass them around, create them on the fly._
 
-First Class Functions: Everything you can do with other types you can do with functions. You can assign them to variables, pass them around, create them on the fly.
 
 	```javascript
 
