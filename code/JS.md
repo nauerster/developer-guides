@@ -84,7 +84,7 @@ See [Objects](#objects) for a more in depth look.
 
 	var name = "joe"; // global
 
-	function doStuff() {
+	function DoStuff() {
 
 		var name = "john"; // local to doStuff
 
@@ -147,11 +147,11 @@ See [Objects](#objects) for a more in depth look.
 	```javascript
 
 	// function statement
-	function foo() {
+	function Foo() {
 	    return 3;
 	}
 
-	foo(); // return 3 
+	Foo(); // return 3 
 
 	```
 
@@ -190,11 +190,11 @@ See [Objects](#objects) for a more in depth look.
 
 	```javascript
 
-	function sayHello() {
+	function SayHello() {
 	    alert('Hello');
 	}
 
-	sayHello(); // Calls the function
+	SayHello(); // Calls the function
 
 	```
 
@@ -202,11 +202,11 @@ See [Objects](#objects) for a more in depth look.
 
 	```javascript
 
-	function showDistance(speed, time) {
+	function ShowDistance(speed, time) {
 	    alert(speed + time);
 	}
 
-	showDistance(10, 5); // Calls the Function and the Values we pass to it – returning the value 15
+	ShowDistance(10, 5); // Calls the Function and the Values we pass to it – returning the value 15
 
 	```
 
@@ -214,11 +214,11 @@ See [Objects](#objects) for a more in depth look.
 
 	```javascript
 
-	function showDistance(speed, time) {
+	function ShowDistance(speed, time) {
 	    alert(speed + time);
 	}
 
-	var myDistance = showDistance(10, 5); // Store the results of the calculation showDistance does
+	var myDistance = ShowDistance(10, 5); // Store the results of the calculation showDistance does
 
 	myDistance(); // Calls the results of showDistance = 15
 
@@ -312,7 +312,7 @@ A closure is a set of local variables inside a function – kept alive after the
 
 	```javascript
 
-	function showName() {
+	function ShowName() {
 
 		var name = "joe";
 
@@ -320,7 +320,7 @@ A closure is a set of local variables inside a function – kept alive after the
 
 	}
 
-	var showNames = showName(); // this creates a variable in the global space which keeps the local variable (name) alive for further use.
+	var showNames = ShowName(); // this creates a variable in the global space which keeps the local variable (name) alive for further use.
 
 
 	// console.log(showName); will return the word "Hello"
@@ -331,7 +331,7 @@ A closure is a set of local variables inside a function – kept alive after the
 
 	```javascript
 
-	function getDistance(speed, time) { // passes the arguments
+	function GetDistance(speed, time) { // passes the arguments
 
 	    var distance = speed * time; // stores the arguments values
 
@@ -414,7 +414,7 @@ A closure is a set of local variables inside a function – kept alive after the
 
 			var active = document.querySelectorAll('.tab.is-selected');
 
-	  	validateSelected(this, active);
+	  	ValidateSelected(this, active);
 
 	  	//In the above we are passing 2 arguments through the function 'validateSelected'
 
@@ -424,7 +424,7 @@ A closure is a set of local variables inside a function – kept alive after the
 	  )};
 	}
 
-	function validateSelected(elem, active) {
+	function ValidateSelected(elem, active) {
 
 	  // elem = tab being clicked
 	  // active = tab last selected
@@ -440,7 +440,7 @@ A closure is a set of local variables inside a function – kept alive after the
 
 	}
 
-	setSelected(); //call the function
+	SetSelected(); //call the function
 
 	// [Note]: 
 	// validateSelected doesn't execute until initSelected is triggered and finished
@@ -740,7 +740,7 @@ var MyObject = {
 
 	```javascript
 
-	function createList() {
+	function CreateList() {
 
 	    var data = people.person;
 
@@ -759,9 +759,9 @@ var MyObject = {
 	    });
 	}
 
-	creatList(); // call function
+	CreatList(); // call function
 
-	console.log(createList);
+	console.log(CreateList);
 
 	```
 
