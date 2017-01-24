@@ -27,6 +27,7 @@
 - **Syntax Parser:** A program that reads your code and what it does and if it's grammar is valid.
 - **Lexical Environment:** Where something sits in the code you write. Where is it written and what surrounds it, is important.
 - **Execution Context:** A wrapper to help manage the code that is running.
+- **Dynamic Typing:** JavaScript is a _loosely typed_ or a _dynamic_ language. That means you don't have to declare the type of a variable ahead of time. The type will get determined automatically while the program is being processed.
 
 
 ## Basic Concepts
@@ -73,6 +74,35 @@ See [Objects](#objects) for a more in depth look.
 	-- By default, JavaScript automatically create two things for you:
 		1. The Global Object
 		2. The 'this' variable
+
+
+- **Dynamic typing:**
+
+  Supporting article: [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+
+  Example:
+
+	```javascript
+
+	  // Note: You can have the same variable as different types.
+
+    var foo = 42;        // foo is now a Number
+    var foo = "bar";     // foo is now a String
+    var foo = true;      // foo is now a Boolean
+
+  ```
+
+- **Data types:** ECMAScript standards define seven data types:
+
+  - Six data types that are primitives
+    - Boolean
+    - Null
+    - Undefined
+    - Number
+    - String
+    - Symbol (new in ECMAScript 6)
+
+  - Object
 
 
 ## Scope
