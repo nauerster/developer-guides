@@ -84,7 +84,7 @@ See [Objects](#objects) for a more in depth look.
 
 	```javascript
 
-	// Note: You can have the same variable as different types.
+  // Note: You can have the same variable as different types.
 
   var foo = 42;        // foo is now a Number
   var foo = "bar";     // foo is now a String
