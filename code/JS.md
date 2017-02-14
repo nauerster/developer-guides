@@ -486,6 +486,46 @@ A closure is a set of local variables inside a function – kept alive after the
 	- All data (variables), with properties and methods. 
 	- Almost everything in javascript can be an object... Functions, Variable, Strings, Arrays
 
+- **By Value vs By Reference:**
+	- _Note: It's important to understand the differences between the two._
+	```javascript
+	
+	// by value
+
+	var a = 3;            // 3 is a primitive value (Number)
+	var b;
+
+	b = a;                // assigns a copy of (a's) value
+
+	console.log(b);       // will be 3
+
+	// Why? Both (a & b) point to new spots (addresses) in memory.
+	//      Since (a) is a primitive value - (b) can recieve a copy of it's value    
+
+
+	**************************************************************************************
+
+	// by reference (all objects (including functions))
+
+	var a = { greeting: 'hi' };    // object literal
+	var b;
+
+	b = a;                         // points (b) to the same stop in memory as (a) 
+
+	// Why? Both are objects. (b) simply become a reference of (a). It doesn't get set up as
+	//      a new place in memory, as a copy of (a)
+
+	// This means, (b) can mutate (a's) property value
+
+	b.greeting = 'hello';
+
+	console.log(a);                // will be 'hello'
+	console.log(b);                // will be 'hello'
+
+	// Why? Both are pointing to the same location in memory, which was updated (mutated) by (b)
+
+	```
+
 
 - **Create an Object:**
 
