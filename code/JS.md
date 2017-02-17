@@ -847,23 +847,106 @@ var MyObject = {
 
 - **How to reverse the above string:**
 
+	- There are a few different ways to accomplish this, I'll show you two.
+	
 	```javascript
-
-	var str = "a b c", //create the string
-	    len = str.length, //store it's length
-	    reverse = ""; // assign an empty string
-
-	for (var i = len; i >= 0; i--) {
-
-	    reverse += str[i]; // assign the results to reverse
-
+	// chaining methods
+	
+	function reverseString (str) {
+	
+		return str.split('').reverse('').join('');	
 	}
+	
+	console.log(reserveString( 'Hello' ));      // should result in 'olleH'
+	
+	
+	```
+	
+	```javascript
+	// create a decrementing For Loop
 
-	var newStr = reverse; // store reverse as a new variable
-
-	console.log(newStr); // console the results
+	function reverseString (str) {
+	
+		// stand up our empty string
+		var reverse = '';
+		
+		for (var i = str.length -1; i >= 0; i--) {
+		
+			reverse += str[i]; // assign results to reverse
+		
+		}
+		
+		return reverse;
+	
+	} 
+	
+	console.log(reverseString('Hello'));      // should result in 'olleH'
 
 	```
+	
+	- Now that we have a reusable function at our disposol, we could re-reverse our 'olleH' string
+	
+	```javascript
+	
+	// using the function above, we can do the following
+	
+	// store our result in a new variable
+	var reversedString = reverseString('Hello');
+	
+	// then pass that variable back into our reverseString function
+	var str = reverseString(reversedString);
+	
+	console.log(str);                        // should result in 'Hello'
+	
+	```
+
+- **How to turn a string into an array:**
+
+	```javascript
+	
+	function createNewArray (str) {
+	
+		var newArray = [];
+		var items = str.split('');
+		
+		for ( var i = 0; i < items.length; i++ ) {
+		
+			newArray.push(items[i]);
+		
+		}
+		
+		return newArray;
+	
+	}
+	
+	var newArray = createNewArray('Hello');
+	
+	console.log(newArray);
+	
+	```
+
+- **How to create a simple filter:**
+
+	```javascript
+	
+	var messages = [{ "message": "one" }, { "message": "two" }, { "message": "three" }];
+	var message = 'two';
+	var foundMessage = false;
+
+	for (var i = 0; i < messages.length; i++) {
+
+  		if (messages[i].message == message) {
+
+    		foundMessage = true;
+    		break;
+
+  		}
+	}
+	
+	```
+
+
+
 
 ## Credits:
 
