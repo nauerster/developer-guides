@@ -847,7 +847,7 @@ var MyObject = {
 
 - **How to reverse the above string:**
 
-	- There are a few different ways to accomplish this, I'll show you two.
+	- There are a few different ways to accomplish this here are three.
 	
 	```javascript
 	// chaining methods
@@ -899,6 +899,85 @@ var MyObject = {
 	console.log(str);                        // should result in 'Hello'
 	
 	```
+
+	```javascript
+
+	// using a recursive strategy
+
+	function reverse (str) {
+
+	    if (str === "") {
+
+	        return "";
+
+	    } else {
+
+	        return reverse(str.substr(1)) + str.charAt(0);
+
+	    }
+
+	}
+
+	console.log(reverse( 'Hello' ));
+
+	```
+
+- **How to reverse alpha only characters in a given string:**
+
+	```javascript
+
+	/**
+	 * Objective: Reverse each word in the given string, 
+	 * leaving both the sequence and any special characters untouched. 
+	 */
+
+	// Our reverse function
+	function ReverseString (str) {
+
+	  // Step 1. Create an empty string that will host the new created string
+		var newString = '';
+
+	  // Step 2. Create our FOR loop
+	  /* The starting point of the loop will be (str.length - 1) which corresponds to the
+	   * last character of the string.
+	   * As long as i is greater that or equal to 0, the loop will go on.
+	   * We decrement i after each iteration
+	   */
+		for (var i = str.length - 1; i >= 0; i-- ) {
+
+			newString += str[i]; // newString = newString + str[i]
+
+		}
+
+	  // Step 3. Return the reversed string
+		return newString;
+
+	}
+
+	// Create a new function that will match and replace only characters a-z (alpha only)
+	function ReverseAlphaOnly (str) {
+
+	  // Returns a new string with only those matching the provided Regexp (Regular Expression Pattern)
+		return str.replace(/[a-z]+/gi, function(matches) {
+
+	    // Next, we reverse our matched words
+			var stringOut = ReverseString(matches);
+
+	    // Return our new string
+			return stringOut;
+
+		});
+
+	}
+
+	// Now we can define the string we want to reverse.
+	var revStr = ReverseAlphaOnly('Hi! my, !name is > Eric');
+
+	console.log(revStr);    // should result in 'iH! ym, !eman si > cirE'
+
+
+	```
+
 
 - **How to turn a string into an array:**
 
