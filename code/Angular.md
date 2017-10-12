@@ -9,6 +9,7 @@
 1. [Definitions](#definitions)
 1. [Basic Concepts](#concepts)
 1. [Calling DOM APIs Directly](#dom)
+1. [Helpful Snippets](#snippets)
 
 
 ## Definitions
@@ -143,5 +144,38 @@
   }
 
   ```
+
+
+## Helpful Snippets
+
+- **How to get a hold of a property and match it with a defined value:**
+
+  ```javascript
+   
+   // Option 1
+    matchOnParamId(itemId: string, items: Array<any>) {
+
+	    let lastItemFoundWithId;
+	
+	    items.forEach(i => {
+		    if (i.id == itemId) {
+			    lastItemFoundWithId = i;
+		    }
+	    });
+	
+	   return lastItemFoundWithId;
+
+    }
+
+  // Option 2
+  matchOnParamId(itemId: string, items: Array<any>) {
+
+	  return items.find(x => x.id == itemId);
+    
+  }
+
+```
+
+
 
 **[Back to top](#table-of-contents)**
